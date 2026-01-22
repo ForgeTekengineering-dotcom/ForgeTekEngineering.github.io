@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="ForgeTek Engineering Inc. — Industrial electrical drafting and design support. AutoCAD drawings, MCC/panel design support, single-line diagrams, cable tray routing, and construction-ready documentation." />
+  <title>ForgeTek Engineering Inc. | Industrial Electrical Drafting & Design Support</title>
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#101a33;
+      --muted:#a9b6d3;
+      --text:#eef3ff;
+      --accent:#67a6ff;
+      --accent2:#6fffd2;
+      --border:rgba(255,255,255,.12);
+      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 10% 10%, rgba(103,166,255,.18), transparent 60%),
+        radial-gradient(1100px 700px at 90% 20%, rgba(111,255,210,.10), transparent 55%),
+        linear-gradient(180deg, #070c16, var(--bg));
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:14px 0;
+    }
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+    .logo{
+      width:42px; height:42px; border-radius:14px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 10px 25px rgba(103,166,255,.22);
+    }
+    .brand strong{letter-spacing:.2px}
+    .navlinks{display:flex; flex-wrap:wrap; gap:14px}
+    .navlinks a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:12px;
+    }
+    .navlinks a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:12px 16px; border-radius:14px;
+      border:1px solid var(--border); background:rgba(255,255,255,.06);
+      text-decoration:none; color:var(--text);
+      transition: transform .08s ease;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(103,166,255,.95), rgba(111,255,210,.70));
+      border-color:transparent; color:#07101f; font-weight:750;
+      box-shadow:0 12px 30px rgba(103,166,255,.18);
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .hero{
+      padding:44px 0 18px;
+      display:grid; grid-template-columns: 1.25fr .75fr;
+      gap:22px; align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; padding-top:26px}
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    h1{margin:0 0 10px; font-size:42px; line-height:1.1; letter-spacing:-.5px}
+    @media (max-width: 520px){h1{font-size:34px}}
+    .sub{color:var(--muted); margin:0 0 18px; font-size:17px}
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .pill{
+      font-size:13px; color:#dfe9ff;
+      padding:8px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.15);
+    }
+    .grid{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap:16px; margin-top:16px;
+    }
+    @media (max-width: 900px){.grid{grid-template-columns:1fr}}
+    h2{margin:0 0 8px; font-size:22px}
+    h3{margin:0 0 6px; font-size:16px}
+    p{margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .kpi{
+      display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; margin-top:12px;
+    }
+    .kpi .box{
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.14);
+    }
+    .kpi .num{font-size:18px; font-weight:800}
+    .section{margin-top:18px}
+    .list{margin:10px 0 0; padding:0 0 0 18px}
+    .list li{margin:6px 0}
+    .footer{
+      margin:26px 0 10px; color:var(--muted);
+      display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px;
+      border-top:1px solid var(--border); padding-top:14px;
+    }
+    .small{font-size:13px}
+    .notice{
+      border-left:3px solid rgba(111,255,210,.7);
+      padding:10px 12px; border-radius:12px;
+      background:rgba(111,255,210,.06);
+      color:var(--muted);
+    }
+    .twoCol{
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:10px;
+    }
+    @media (max-width: 900px){.twoCol{grid-template-columns:1fr}}
+    code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+      color: #e9f2ff;
+      background: rgba(0,0,0,.22);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="nav" aria-label="Primary">
+      <a class="brand" href="#top">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <strong>ForgeTek Engineering Inc.</strong><br />
+          <span class="small muted">Industrial Electrical Drafting & Design Support</span>
+        </div>
+      </a>
+
+      <nav class="navlinks" aria-label="Site">
+        <a href="#services">Services</a>
+        <a href="#deliverables">Deliverables</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top" class="hero">
+      <section class="card">
+        <h1>Industrial electrical drawings that are clean, buildable, and on time.</h1>
+        <p class="sub">
+          ForgeTek supports industrial sites and OEMs with AutoCAD drafting, power and control drawings,
+          MCC/panel design support, cable tray routing, and construction-ready documentation.
+        </p>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:6px;">
+          <a class="btn primary" href="mailto:forgetekeng@gmail.com?subject=ForgeTek%20Project%20Inquiry">Email for a Quote</a>
+          <a class="btn" href="#services">View Services</a>
+        </div>
+
+        <div class="pillrow" aria-label="Highlights">
+          <span class="pill">AutoCAD drafting</span>
+          <span class="pill">MCC & panel layouts</span>
+          <span class="pill">Power & control schematics</span>
+          <span class="pill">Single-line diagrams</span>
+          <span class="pill">Cable tray routing (AutoCAD / Revit)</span>
+          <span class="pill">Cable schedules</span>
+        </div>
+
+        <div class="section notice">
+          <strong>Based in Ontario.</strong> Remote-first. Site visits available when needed to verify existing conditions.
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>What you get</h2>
+        <p class="muted">No fluff—just drawings and schedules that help you build and commission.</p>
+
+        <div class="kpi" aria-label="Key points">
+          <div class="box">
+            <div class="num">Field-ready</div>
+            <div class="small muted">Clear tags, term points, cable IDs</div>
+          </div>
+          <div class="box">
+            <div class="num">Procurement-ready</div>
+            <div class="small muted">BOM support, vendor alignment</div>
+          </div>
+          <div class="box">
+            <div class="num">Revision-controlled</div>
+            <div class="small muted">Clean updates, as-builts</div>
+          </div>
+          <div class="box">
+            <div class="num">Industrial</div>
+            <div class="small muted">Mining, OSB, skids, material handling</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Contact</h3>
+          <p class="muted" style="margin-bottom:8px;">
+            Email is best:
+          </p>
+          <p style="margin:0;"><a class="btn" href="mailto:forgetekeng@gmail.com?subject=ForgeTek%20Project%20Inquiry">forgetekeng@gmail.com</a></p>
+        </div>
+      </aside>
+    </main>
+
+    <section id="services" class="grid">
+      <div class="card">
+        <h2>Services</h2>
+        <p class="muted">Core support for industrial electrical scope.</p>
+        <ul class="list">
+          <li>AutoCAD drafting for electrical packages</li>
+          <li>Power schematics and control schematics</li>
+          <li>Panel layout drawings and internal wiring details</li>
+          <li>Terminal / I/O / card drawings (marshalling, terminations)</li>
+          <li>As-builts (redlines to final drawings)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>MCC & Panel Support</h2>
+        <p class="muted">Design support through ordering and build packages.</p>
+        <ul class="list">
+          <li>MCC lineup planning and feeder organization</li>
+          <li>Bucket schedules, device lists, and layout support</li>
+          <li>Vendor/distributor coordination for quoting and ordering</li>
+          <li>Build-ready drawing packages for fabrication/installation</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Power Distribution</h2>
+        <p class="muted">When you need more power, new equipment, or a plant upgrade.</p>
+        <ul class="list">
+          <li>Single-line diagrams (SLDs)</li>
+          <li>Feeder planning and load list support</li>
+          <li>Basic distribution design for tie-ins and expansions</li>
+          <li>Construction-friendly documentation for installs</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid section">
+      <div class="card">
+        <h2>Cable Tray Routing</h2>
+        <p class="muted">Routing that matches the field and supports installation.</p>
+        <ul class="list">
+          <li>Cable tray routing drawings in <strong>AutoCAD</strong> or <strong>Revit</strong></li>
+          <li>Conduit/tray planning support for new builds and upgrades</li>
+          <li>Integration with cable schedules and termination points</li>
+        </ul>
+      </div>
+
+      <div class="card" id="deliverables">
+        <h2>Typical Deliverables</h2>
+        <p class="muted">Common outputs clients request.</p>
+        <ul class="list">
+          <li>SLDs and distribution drawings</li>
+          <li>MCC and panel layouts</li>
+          <li>Schematics (power/control)</li>
+          <li>Cable schedules, term lists, I/O lists</li>
+          <li>Commissioning / turnover packs (as required)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Construction Support</h2>
+        <p class="muted">Support during install so the job keeps moving.</p>
+        <ul class="list">
+          <li>Site visits (as required) to verify existing conditions</li>
+          <li>Markups, redlines, and quick revisions during construction</li>
+          <li>Coordination with OEM skid scope (motors, sensors, drives)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="process" class="grid section">
+      <div class="card">
+        <h2>How it works</h2>
+        <ol class="list">
+          <li><strong>Kickoff:</strong> quick intake call + drawings/photos + deliverable list</li>
+          <li><strong>Draft:</strong> early draft package for review (so we’re not fixing it at the end)</li>
+          <li><strong>Finalize:</strong> revisions, issue PDFs, and provide editable files as agreed</li>
+          <li><strong>Support:</strong> redlines/as-builts and construction coordination if needed</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>What I need from you</h2>
+        <p class="muted">Even rough info helps—send what you’ve got.</p>
+        <ul class="list">
+          <li>Existing drawings (SLD/MCC/panel) if available</li>
+          <li>Equipment list (motors, drives, instruments, panels)</li>
+          <li>Voltage levels and control power assumptions</li>
+          <li>Preferred standards/title blocks/layering (if any)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Quick scope email template</h2>
+        <p class="muted">Copy/paste this into an email to get a fast quote:</p>
+        <div class="notice small">
+          Subject: <code>Project Inquiry – [Site/Project Name]</code><br /><br />
+          • Location:<br />
+          • Scope needed (drawings/schedules):<br />
+          • Deadline / target issue date:<br />
+          • Existing drawings/photos available?<br />
+          • Vendor list / MCC/panel preferences (if any):<br />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="grid section">
+      <div class="card" style="grid-column:1/-1;">
+        <h2>Contact</h2>
+        <p class="muted">
+          Email is best. Include the project name, location, what you need, and any drawings/photos you have.
+        </p>
+
+        <div class="twoCol">
+          <div class="notice">
+            <strong>Email</strong><br />
+            <a class="btn primary" href="mailto:forgetekeng@gmail.com?subject=ForgeTek%20Project%20Inquiry">forgetekeng@gmail.com</a>
+          </div>
+          <div class="notice">
+            <strong>Coverage</strong><br />
+            Ontario, Canada (remote-first) • Site visits available when needed
+          </div>
+        </div>
+
+        <p class="small muted" style="margin-top:12px;">
+          Note: Final scope, pricing, and deliverables are confirmed in writing prior to work.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="small">© <span id="year"></span> ForgeTek Engineering Inc.</div>
+      <div class="small">Industrial electrical drafting • Design support • Documentation</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
